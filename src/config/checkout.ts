@@ -17,7 +17,7 @@ const DEFAULT_CHECKOUT_URL = 'https://pay.cakto.com.br/zrfcif3';
 export const CHECKOUT_URL: string =
   import.meta.env.VITE_CHECKOUT_URL?.trim() || DEFAULT_CHECKOUT_URL;
 
-export const PRODUCT_PRICE = '$57 MXN';
+export const PRODUCT_PRICE = '$63 MXN';
 
 /**
  * ============================================================================
