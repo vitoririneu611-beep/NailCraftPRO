@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { CheckoutButton } from './CheckoutButton';
 import { SocialProofTrigger } from './SocialProofTrigger';
+import { PRODUCT_PRICE } from '../config/checkout';
 import type { VerifiedPurchaseStats } from '../hooks/useVerifiedPurchaseStats';
 
 interface FinalOfferSectionProps {
@@ -34,7 +35,7 @@ export function FinalOfferSection({ purchaseStats }: FinalOfferSectionProps) {
               Precio especial
             </p>
             <p className="mt-1 font-serif text-5xl font-bold tracking-tight text-[#8A3F4B] tabular-nums sm:text-6xl">
-              US$ 3
+              {PRODUCT_PRICE}
             </p>
             <p className="mt-3 text-sm font-medium text-[#2C1E1E] sm:text-base">
               Acceso digital al manual PDF
@@ -46,7 +47,7 @@ export function FinalOfferSection({ purchaseStats }: FinalOfferSectionProps) {
 
           <div className="mt-8 flex flex-col items-center gap-4">
             <CheckoutButton
-              label="COMPRAR AHORA POR US$ 3"
+              label={`COMPRAR AHORA POR ${PRODUCT_PRICE}`}
               size="lg"
               className="w-full sm:w-auto sm:min-w-[300px]"
             />

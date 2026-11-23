@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
+import { Users } from 'lucide-react';
 import { CheckoutButton } from './CheckoutButton';
 import { ResilientImage } from './ResilientImage';
 import { SocialProofTrigger } from './SocialProofTrigger';
+import { PRODUCT_PRICE } from '../config/checkout';
 import type { VerifiedPurchaseStats } from '../hooks/useVerifiedPurchaseStats';
 
 const HERO_IMAGE_PATH = '/src/assets/images/hero_nail_salon_manicure_1795323881395.jpg';
@@ -26,7 +28,7 @@ export function HeroSection({ purchaseStats }: HeroSectionProps) {
               className="mb-5"
             >
               <span className="inline-block border-b border-[#C59B5F] pb-1.5 text-xs font-semibold tracking-[0.16em] text-[#8A3F4B] sm:text-sm">
-                OFERTA ESPECIAL: SOLO US$ 3
+                OFERTA ESPECIAL: SOLO {PRODUCT_PRICE}
               </span>
             </motion.div>
 
@@ -51,8 +53,20 @@ export function HeroSection({ purchaseStats }: HeroSectionProps) {
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-5 inline-flex w-fit items-center gap-2.5 rounded-xl border border-[#E6D5C8] bg-[#FAF2EE] px-4 py-2.5 text-sm font-medium text-[#4A3331]"
+            >
+              <Users className="h-4 w-4 shrink-0 text-[#9E743C]" aria-hidden="true" />
+              <span className="tabular-nums">
+                Más de <strong className="font-semibold text-[#8A3F4B]">6,000 alumnas</strong> ya aseguraron su manual
+              </span>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-8 flex flex-col items-start gap-4"
+              className="mt-7 flex flex-col items-start gap-4"
             >
               <CheckoutButton
                 label="QUIERO MI MANUAL AHORA"
@@ -67,7 +81,7 @@ export function HeroSection({ purchaseStats }: HeroSectionProps) {
                 <span aria-hidden="true" className="text-[#C59B5F]">·</span>
                 <span>16 módulos educativos</span>
                 <span aria-hidden="true" className="text-[#C59B5F]">·</span>
-                <span className="tabular-nums">Solo US$ 3</span>
+                <span className="tabular-nums">Solo {PRODUCT_PRICE}</span>
               </div>
             </motion.div>
           </div>
